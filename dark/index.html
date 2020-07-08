@@ -1,0 +1,110 @@
+<html>
+    <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-167886143-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-167886143-1');
+</script>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" type="image/x-icon" href="image/icon/toozleicon.ico">
+<link rel="apple-touch-icon" sizes="275x275" href="image/icon/toozleicon.png">　
+<link href="https://fonts.googleapis.com/css?family=Google+Sans:100,300,400,500,700,900,100i,300i,400i,500i,700i,900i" rel="stylesheet">
+        <meta http-equiv="content-type" charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <title>Toozle</title>
+    </head>
+    <script>
+        window.addEventListener('load', function() {
+          if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register("/serviceWorker.js")
+              .then(function(registration) {
+                console.log("serviceWorker registed.");
+              }).catch(function(error) {
+                console.warn("serviceWorker error.", error);
+              });
+          }
+        });
+    </script>
+    <body>
+        <header>
+            <div class="header-logo-menu">
+            <div id="nav-drawer">
+                <input id="nav-input" type="checkbox" class="nav-unshown">
+                <label id="nav-open" for="nav-input"><span></span></label>
+                <label class="nav-unshown" id="nav-close" for="nav-input"></label>
+                <div id="nav-content">
+                <div class = "menusp">
+                    <ul>
+                        <font size = "6" color = "black">
+                        <a href ="https://www.toozle.net/dark"><img src ="image/toozle.png" width ="300"></a>
+                        <a href ="https://www.toozle.net/"><li>ホワイトテーマへ</li></a>
+                        <a href ="http://about.toozle.net"><li>Toozleについて</li></a>
+                        <a href ="http://support.toozle.net/"><li>ヘルプ</li></a>
+                        <a href ="http://about.toozle.net/contact"><li>お問い合わせ</li></a>
+                        <a href ="https://twitter.com/Toozle_Official"><li>Twitter</li></a>
+                        </font>
+                   </ul>
+                </div>
+                </div>
+            </div>
+            </div>
+        </header>
+        <ul>
+            <div class ="m_pc_all">
+            <div class ="menupc"><a href ="https://www.toozle.net"><li>ホワイトテーマへ</li></a></div>
+            <div class ="menupc"><a href ="http://about.toozle.net"><li>Toozleについて</li></a></div>
+            <div class ="menupc"><a href ="https://twitter.com/toozle_official"><li>Twitter</li></a></div>
+            </div>
+        </ul> 
+        <div class ="shortcut">
+            
+        </div>
+        <center>
+        <a href ="https://www.toozle.net/dark"><img src ="image/toozle.png" width ="350" class ="logo"></a>
+        <form method ="GET" action ="../se/index.php" name ="search">
+            <input type ="text" size ="60px" name="q" id ="search"><label for ="onsei_search"><img src ="image/dokata.png" width ="65" class ="onsei_search"></label>
+            <br>
+            <input type ="submit" value ="Toozle検索" class ="t_se">
+            <div class ="engine">
+                <select name ="se">
+                    <option value="google">検索エンジンを選択</option>
+                    <option value="pornhub">PornHub 検索</option>
+                    <option value="xvideos">XVideos 検索</option>
+                    <option value="nicovideo">ニコニコ動画 検索</option>
+                    <option value="google">Google 検索</option>
+                    <option value="twitter">Twitter 検索</option>
+                    <option value="youtube">Youtube 検索</option>
+                    <option value="fc2">FC2 検索</option>
+                </select>
+            </div>
+            </form>
+            <input type ="checkbox" id="onsei_search">
+            <script>
+                let button = document.getElementById('onsei_search');
+            let speech = new webkitSpeechRecognition();
+            let result = document.getElementById('result');
+            button.onclick = () => {
+              speech.start();
+              speech.onresult = function (e) {
+                speech.stop();      
+                if (e.results[0].isFinal) {
+                  document.getElementById("search").value =　e.results[0][0].transcript;
+                }
+              } 
+            }
+                </script>    
+        </center>
+        <div class ="bottom">
+            <ul>
+                <div class ="bottom_item"><a href ="http://about.toozle.net/corporate"><li>企業情報</li></a></div>
+                <div class ="bottom_item"><a href ="http://developper.toozle.net"><li>開発者向けサイト</li></a></div>
+                <div class ="bottom_item"><a href ="http://support.toozle.net"><li>ヘルプ</li></a></div>
+                <br><div class ="bottom_item"><font color ="#87B0F3"><li>&copy;2020Toozle</li></font></div>
+            </ul>
+        </div>
+    </body>
+</html>    

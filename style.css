@@ -1,0 +1,260 @@
+body{
+    margin: 0;
+    font-family: 'Google Sans';
+    min-height: 100vh;
+    position: relative;
+}
+header {
+  margin: 30;
+    padding:10px;
+    background: #ffffff;
+    display: none;
+  }
+  
+  #nav-drawer {
+    position: relative;
+  }
+  
+  
+  .nav-unshown {
+    display:none;
+  }
+  
+  #nav-open {
+    display: inline-block;
+    width: 30px;
+    height: 22px;
+    vertical-align: middle;
+  }
+  
+  .menusp ul a li {
+    margin-top: 80;
+  }
+
+  .menusp ul a img {
+    margin-top: 30;
+  }
+  
+  #nav-open span, #nav-open span:before, #nav-open span:after {
+    position: absolute;
+    height: 6px;
+    width: 50px;
+    border-radius: 3px;
+    background: #555;
+    display: block;
+    content: '';
+    cursor: pointer;
+  }
+  
+  #nav-open span:before {
+    bottom: -14px;
+  }
+
+  #nav-open span:after {
+    bottom: -28px;
+  }
+  
+  
+  #nav-close {
+    display: none;
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0;
+    transition: .3s ease-in-out;
+  }
+  
+  
+  #nav-content {
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    width: 90%;
+    max-width: 70%;
+    height: 100%;
+    background: #fff;
+    transition: .3s ease-in-out;
+    -webkit-transform: translateX(-105%);
+    transform: translateX(-105%);
+  }
+  
+  .menusp ul li{
+    margin-top: 30;
+    margin-left: 40;
+    font-size: 50;
+  }
+
+  #nav-input:checked ~ #nav-close {
+    display: block;
+    opacity: .5;
+  }
+  
+  #nav-input:checked ~ #nav-content {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+    box-shadow: 6px 0 25px rgba(0,0,0,.15);
+  }
+  
+  .header-logo-menusp{
+      display: flex;
+      display: -moz-flex;
+      display: -o-flex;
+      display: -webkit-flex;
+      display: -ms-flex;
+      flex-direction: row;
+      -moz-flex-direction: row;
+      -o-flex-direction: row;
+      -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+  }
+
+ul{
+    list-style: none;
+    margin: 0;
+}
+
+.menupc{
+    display: inline-block;
+    padding-right: 25;
+    margin-top: 0;
+}
+
+.shortcut{
+  float: right;
+}
+
+#nav-open span, #nav-open span:before, #nav-open span:after {
+  position: absolute;
+  height: 6px;
+  width: 50px;
+  border-radius: 3px;
+  background: #555;
+  display: block;
+  content: '';
+  cursor: pointer;
+}
+
+#nav-open span:before {
+  bottom: -14px;
+}
+
+#nav-open span:after {
+  bottom: -28px;
+}
+
+a{
+    text-decoration: none;
+    color: gray;
+}
+
+input#search{
+    border-radius: 20px;
+    margin: 20;
+    padding: 14;
+    font-size: 15px;
+    border: solid 1px #dcdcdc;
+}
+
+input.t_se{
+    border-radius: 5px;
+    margin: 8;
+    padding: 11;
+    font-size: 13px;
+    border: solid 0px;
+    background-color: #f0f0f0;
+    color: #333333;
+}
+
+select{
+    border-radius: 5px;
+    margin: 8;
+    padding: 11;
+    font-size: 13px;
+    border: solid 0px;
+    background-color: #f0f0f0;
+    color: #333333;
+}
+
+input:focus{
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.4);
+    outline: none;
+}
+
+.engine{
+    display: inline-block;
+}
+
+.bottom{
+    background-color: whitesmoke;
+    width: 100%;
+    padding: 30px 0;
+    position: absolute;
+    bottom: 0; 
+}
+
+.bottom_item{
+    padding: 10;
+    display: inline-block;
+}
+
+img.logo{
+  margin-top: 100;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+#onsei_search{
+  display: none;
+}
+
+img.onsei_search{
+  vertical-align: middle;
+}
+
+@media only screen and (max-width:1000px){
+    
+    .menupc{
+        font-size: 30;
+        display: none;
+    }
+
+    header {
+        display: block;
+    }
+
+    img.logo{
+        width: 700;
+    }
+
+    input#search{
+        font-size: 35;
+        padding: 30;
+        width: 810;
+    }
+
+    input.t_se{
+      font-size: 28;
+        padding: 30;
+    }
+
+    select{
+        font-size: 30;
+        padding: 30;
+    }
+
+    .bottom{
+        display: none;
+    }
+
+    img.onsei_search{
+      width :100;
+    }
+}
